@@ -1,0 +1,81 @@
+# 🔦 Laser Point — Sito Web
+
+Sito e-commerce per prodotti artigianali laser in legno e plexiglass.
+
+## 🏗️ Tecnologie
+
+- **Frontend**: HTML/CSS/JS puro (nessun framework)
+- **Database**: Supabase (PostgreSQL)
+- **Storage immagini**: Supabase Storage
+- **Deploy**: Cloudflare Pages
+- **CI/CD**: GitHub Actions
+
+## 🔧 Configurazione
+
+### 1. Supabase (già configurato)
+- Progetto: `lzsuifjeawzbevkajohh`
+- URL: `https://lzsuifjeawzbevkajohh.supabase.co`
+- Edge Function `admin-api` attiva
+
+### 2. GitHub
+1. Crea un nuovo repository su GitHub
+2. Carica tutti i file di questo progetto
+3. Aggiungi i secrets nel repo:
+   - `CLOUDFLARE_API_TOKEN`
+   - `CLOUDFLARE_ACCOUNT_ID`
+
+### 3. Cloudflare Pages
+1. Vai su [Cloudflare Dashboard](https://dash.cloudflare.com)
+2. Pages → Create a project → Connect to Git
+3. Seleziona il repository GitHub
+4. Build settings:
+   - Framework preset: `None`
+   - Build command: *(lascia vuoto)*
+   - Build output directory: `.`
+5. Clicca Deploy!
+
+## 🔐 Accesso Admin
+
+URL: `https://tuodominio.pages.dev/admin.html`
+
+Password predefinita: `laserpoint2024`
+
+**⚠️ Cambia la password subito dopo il primo accesso!**
+
+## 📁 Struttura
+
+```
+laser-point/
+├── index.html          # Homepage
+├── products.html       # Catalogo prodotti
+├── admin.html          # Pannello admin
+├── css/
+│   ├── style.css       # Stile principale
+│   └── admin.css       # Stile admin
+├── js/
+│   ├── config.js       # Configurazione Supabase
+│   ├── main.js         # Logica sito pubblico
+│   └── admin.js        # Logica pannello admin
+├── _redirects          # Cloudflare Pages routing
+└── .github/
+    └── workflows/
+        └── deploy.yml  # CI/CD GitHub Actions
+```
+
+## 🎨 Funzionalità
+
+### Sito Pubblico
+- Homepage con hero, categorie, prodotti in evidenza
+- Catalogo con filtri per categoria e ricerca
+- Modal dettaglio prodotto con galleria immagini
+- Richiesta informazioni via WhatsApp
+- Form di contatto
+
+### Pannello Admin (`/admin.html`)
+- Login con password
+- Dashboard con statistiche
+- Gestione prodotti (CRUD)
+  - Upload multiple immagini
+  - Gestione disponibilità e featured
+- Gestione categorie (CRUD)
+- Cambio password admin
